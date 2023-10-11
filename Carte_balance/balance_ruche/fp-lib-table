@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "librairieEmpreintes")(type "KiCad")(uri "F:/ssd/BTS SN/bts_sn/logiciels/kicad/librairieEmpreintes.pretty")(options "")(descr ""))
+  (lib (name "essais")(type "KiCad")(uri "F:/ssd/BTS SN/bts_sn/cartes_maison/balance/essais.pretty")(options "")(descr ""))
+)
