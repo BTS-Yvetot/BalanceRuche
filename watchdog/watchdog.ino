@@ -7,6 +7,9 @@ volatile bool routineINT1 = false;
 
 //programme d'interruption declenche par le chien de garde
 ISR(WDT_vect) {
+  EIMSK = 0x00;                              //desactivation des inter externes
+  WDTCSR = (1 << WDCE) | (1 << WDE);         //desactivation du chien de garde
+  WDTCSR = 0b0000000;                        //
   routineWDT = true;
 }
 
@@ -60,7 +63,7 @@ int main (void) {
 
     //autorise les interruptions des deux boutons poussoirs
     EIFR = 0b00000011; //efface les drapeaux !!  evite de repartir en interruption si
-    //l'on a appuye sur plusieurs boutons
+                        //l'on a appuye sur plusieurs boutons
     EIMSK = 0x03;     //validation des interruptions sur les pattes PD2 et PD3 (INT0 et INT1)
     EICRA = 0b00001010; //front descendant sur int1 et int0
 
